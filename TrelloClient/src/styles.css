@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/font-awesome/css/font-awesome.css';
+.app_title {
+  background: rgb(37, 129, 216);
+  font-family: 'Open Sans', sans-serif;
+  font-size: large;
+  text-align: center;
+  color: #ffffff;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.column {
+	box-sizing: border-box;
+	float: left;
+	padding-left: 30px;
+	width: 33.3%;
+}
+
+table {
+	border-collapse: collapse;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+table td {
+  font-family: "Roboto", sans-serif;
+	border-bottom: 1px solid #ccc;
+	padding: 15px 15px 15px;
+}
+
+.card {
+  width: 80%;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}

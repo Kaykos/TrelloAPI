@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiBase: 'https://trellowebservicetest.appspot.com',
+  clientUrl: 'https://trellowebservicetest.appspot.com'
 };

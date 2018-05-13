@@ -1,0 +1,20 @@
+<div>
+  <div class="column">
+    <h2>Boards</h2>
+
+    <div *ngIf="service.token === ''">
+      <h3>You must authorize the application to access your data</h3>
+      <button (click)="requestToken()">Authorize</button>
+    </div>
+
+    <table *ngIf="service.token !== ''">
+      <tr *ngFor="let board of boards">
+        <td (click)="selectBoard(board)">{{board.name}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+  <app-list-list [board]="selectedBoard"></app-list-list>
+
+</div>
