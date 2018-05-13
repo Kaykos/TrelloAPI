@@ -1,3 +1,4 @@
+import { DataWrapperService } from './../../shared/services/data-wrapper.service';
 import { TrelloService } from './../../shared/services/trello.service';
 import { Board } from './../../shared/models/board';
 import { Component, OnInit, Renderer2 } from '@angular/core';
@@ -12,7 +13,7 @@ export class BoardListComponent implements OnInit {
   boards: Board[] = [];
   selectedBoard: Board = new Board();
 
-  constructor(public service: TrelloService, private renderer: Renderer2) {
+  constructor(public service: TrelloService, private dataService: DataWrapperService, private renderer: Renderer2) {
     this.renderer.listen('window', 'message', this.receiveMessage.bind(this));
    }
 
@@ -38,7 +39,7 @@ export class BoardListComponent implements OnInit {
   }
 
   selectBoard(board: Board) {
-    console.log('Book selected! ' + board.name);
     this.selectedBoard = board;
+    this.dataService.selectedBoard = board;
   }
 }

@@ -1,0 +1,22 @@
+<div>
+  <div class="column">
+    <h2>Edit card</h2>
+    <br>
+    <div>
+      <form (ngSubmit)="editCard()">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" size="40" [(ngModel)]="card.name">
+        <br>
+        <label for="due_date">Due Date</label>
+        <input type="text" id="due_date" name="due_date" placeholder="YYYY-MM-DD" [(ngModel)]="card.due">
+        <br>
+        <label for="description">Description</label>
+        <textarea type="text" id="description" name="description" cols="40" rows="10" [(ngModel)]="card.desc"></textarea>
+        <br> 
+        <br>
+        <button type="submit">Edit</button>
+      </form>
+    </div>
+    <a class="back_link" [routerLink]="['/trello/board-list']" routerLinkActive="router-link-active"> <i class="fa fa-arrow-left"></i> Back</a>
+  </div>
+</div>

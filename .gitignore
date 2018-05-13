@@ -1,4 +1,6 @@
 /TrelloService/target
 /TrelloService/.idea/
+/TrelloService/src/dist
 
 /TrelloClient/node_modules
+/TrelloClient/dist

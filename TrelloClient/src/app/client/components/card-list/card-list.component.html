@@ -1,10 +1,24 @@
 <div>
   <div class="column">
     <h2>Cards</h2>
-    <div *ngFor="let card of cards" class="card">
-      <div>{{card.name}}</div>
-      <div>{{card.desc}}</div>
-      <div>{{card.desc}}</div>
+    <div *ngIf="service.token !== ''">
+      <div class="table_init">
+        <h3>{{listName}}</h3>
+        <button *ngIf="list.id" [routerLink]="['/trello/card-create']" routerLinkActive="router-link-active">New Card</button>
+      </div>
+      <div *ngFor="let card of cards" class="card">
+        <div class="card_title">{{card.name}}</div>
+        <div class="card_actions">
+          <a [routerLink]="['/trello/card-edit', card.id]" routerLinkActive="router-link-active">
+            <i class="fa fa-edit clickable_icon"></i>
+          </a>
+          <a [routerLink]="['/trello/card-delete', card.id]" routerLinkActive="router-link-active">
+            <i class="fa fa-trash clickable_icon"></i>
+          </a>
+        </div>
+        <div *ngIf="card.due" class="card_due">{{card.due}}</div>
+        <div *ngIf="card.desc" class="card_desc">{{card.desc}}</div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,10 @@
+runtime: java
+
+handlers:
+- url: /(.*\.(css|js|jpg|png|ico|json|ttf|woff|woff2|map))$
+  static_files: ../../dist/\1
+  upload: ../../dist/.*\.(css|js|jpg|png|ico|json|ttf|woff|woff2|map)$
+
+- url: /[A-Za-z0-9/-]*
+  upload: ../../dist/index.html
+static_files: ../../dist/index.html

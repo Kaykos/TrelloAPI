@@ -1,11 +1,14 @@
 <div>
   <div class="column">
     <h2>Lists</h2>
-    <table>
-      <tr *ngFor="let list of lists">
-        <td (click)="selectList(list)">{{list.name}}</td>
-      </tr>
-    </table>
+    <div *ngIf="service.token !== ''">
+      <h3>{{boardName}}</h3>
+      <table>
+        <tr *ngFor="let list of lists">
+          <td (click)="selectList(list)">{{list.name}}</td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <app-card-list [list]="selectedList"></app-card-list>
